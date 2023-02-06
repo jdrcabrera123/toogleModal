@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(224, 224, 224);
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 0px;
+  height: 0px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  transition: 0.5s;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 2px;
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+.container .content {
+  min-width: 400px;
+  padding: 40px;
+  color: black;
+  opacity: 0;
+  transition: 0.5s;
+  transform: scale(0);
+}
+.container .toggleBtn {
+  position: absolute;
+  bottom: -20px;
+  min-width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.container .toggleBtn::before {
+  content: "+";
+  font-size: 2.5em;
+  color: black;
+  font-weight: bolder;
+}
+.container.active .content {
+  opacity: 1;
+  transition-delay: 0.2s;
+  transform: scale(1);
+}
+.container.active .toggleBtn {
+  transform: translateY(100px) rotate(45deg);
+  background-color: rgb(123, 123, 123);
+}
+.container.active {
+  width: 400px;
+  height: 400px;
+}
+.container.active::before {
+  opacity: 1;
+  transition-delay: 0.2s;
+}/*# sourceMappingURL=styles.css.map */
